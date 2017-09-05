@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>fgm11</title>
+        <link rel="stylesheet" type="text/css" href="">
+        <style type="text/css">
+        *{
+            box-sizing: border-box;
+        }
+            #fgm11{
+
+                width: 500px;
+                margin: 0 auto;
+            }
+            #fgm11 ul{
+                padding: 10px 0;
+                overflow: hidden;
+            }
+            #fgm11 ul li{
+                float: left;
+                margin-right: 10px;
+                width:90px;
+                list-style-type: none;
+                border: 1px solid #ddd;
+                text-align: center;
+                cursor: default;
+            }
+            #fgm11 .display{
+                width: 200px;
+                height: 200px;
+                background-color: #222;
+                margin: 0 auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="fgm11">
+            <ul>
+                <li>width</li>
+                <li>height</li>
+                <li>color</li>
+                <li>hide</li>
+                <li>reset</li>
+            </ul>
+            <div class="display"></div>
+        </div>
+    </body>
+    <script>
+        var lic = document.querySelectorAll('#fgm11 ul li');
+        var divv =document.querySelector('.display');
+        var changeStyle= function(elem,attr,value){elem.style[attr]= value};
+           for(let i=0;i<lic.length;i++)
+            {
+                lic[i].onclick=function()
+                {
+                    var arrs=['width','height','background','display','display']
+                    var arrm =['300px','300px','red','none','block'];
+                    console.log(arrs[i])
+                    if(i==lic.length-1 ){divv.style.cssText=''}
+                    changeStyle(divv,arrs[i],arrm[i]);
+                    console.log(1)
+
+                }
+            }
+    </script>
+</html>
